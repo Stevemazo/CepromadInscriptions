@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <!-- Champ de recherche -->
+    <div class="mb-3">
+        <input type="text" id="recherche1" class="form-control" placeholder="Rechercher un étudiant non validé...">
+    </div>
+
+    <h2 class="mb-4">📋 Étudiants en attente de validation</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-warning" id="tableEtudiants1">
+            <tr>
+                <th>Photo</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Sexe</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for etudiant in etudiants_non_valides %}
+            <tr>
+                <td>
+                    {% if etudiant.photo %}
+                    <img src="{{ url_for('static', filename='uploads/' ~ etudiant.photo) }}" alt="Photo" width="80"
+                        class="img-thumbnail">
+                    {% else %}
+                    <span class="text-muted">Aucune</span>
+                    {% endif %}
+                </td>
+                <td>{{ etudiant.nom }}</td>
+                <td>{{ etudiant.prenom }}</td>
+                <td>{{ etudiant.email }}</td>
+                <td>{{ etudiant.sexe }}</td>
+                <td>{{ etudiant.telephone }}</td>
+                <td>{{ etudiant.adresse }}</td>
+                <td>
+                    <!-- Bouton Modifier -->
+                    <button type="button" class="btn btn-warning btn-sm btn-edit" data-id="{{ etudiant.id }}"
+                        data-nom="{{ etudiant.nom }}" data-prenom="{{ etudiant.prenom }}"
+                        data-email="{{ etudiant.email }}" data-date_naissance="{{ etudiant.date_naissance }}"
+                        data-sexe="{{ etudiant.sexe }}" data-etat_civil="{{ etudiant.etat_civil }}"
+                        data-nom_conjoint="{{ etudiant.nom_conjoint or '' }}" data-adresse="{{ etudiant.adresse }}"
+                        data-telephone="{{ etudiant.telephone }}" data-nom_tuteur="{{ etudiant.nom_tuteur or '' }}"
+                        data-adresse_tuteur="{{ etudiant.adresse_tuteur or '' }}"
+                        data-telephone_tuteur="{{ etudiant.telephone_tuteur or '' }}"
+                        data-allergies="{{ etudiant.allergies or '' }}" data-systeme_id="{{ etudiant.systeme_id }}"
+                        data-promotion_id="{{ etudiant.promotion_id }}"
+                        data-numero_matricule="{{ etudiant.numero_matricule or '' }}">
+                        <i class="fas fa-edit"></i> Modifier
+                    </button>
+
+                    <!-- Bouton Supprimer -->
+                    <form action="{{ url_for('supprimer_etudiant', id=etudiant.id) }}" method="POST" class="d-inline"
+                        onsubmit="return confirm('Confirmer la suppression ?');">
+                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Supprimer</button>
+                    </form>
+
+                    <!-- Bouton Voir Documents -->
+                    <a href="{{ url_for('voir_documents', etudiant_id=etudiant.id) }}" class="btn btn-info btn-sm">
+                        <i class="fas fa-file-alt"></i> Voir documents
+                    </a>
+
+
+                    <!-- Bouton Valider -->
+                    <form action="{{ url_for('valider_etudiant', id=etudiant.id) }}" method="POST" class="d-inline"
+                        onsubmit="return confirm('Valider l\'inscription ?');">
+                        <button class="btn btn-success btn-sm"><i class="fas fa-check"></i> Valider</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Script de recherche dynamique -->
+    <script>
+        document.getElementById('recherche1').addEventListener('input', function () {
+            const filtre = this.value.toLowerCase();
+            const lignes = document.querySelectorAll('#tableEtudiants1 tbody tr');
+            lignes.forEach(ligne => {
+                const texte = ligne.textContent.toLowerCase();
+                ligne.style.display = texte.includes(filtre) ? '' : 'none';
+            });
+        });
+
+    </script>
+
+    <hr class="my-5">
+
+    <!-- Champ de recherche -->
+    <div class="mb-3">
+        <input type="text" id="recherche2" class="form-control" placeholder="Rechercher un étudiant validé...">
+    </div>
+
+    <h2 class="mb-4">✅ Étudiants déjà validés</h2>
+
+    <table class="table table-bordered table-hover" id="tableEtudiants2">
+        <thead class="table-success">
+            <tr>
+                <th>Photo</th>
+                <th>Matricule</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Sexe</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Date Inscription</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for etudiant in etudiants_valides %}
+            <tr>
+                <td>
+                    {% if etudiant.photo %}
+                    <img src="{{ url_for('static', filename='uploads/' ~ etudiant.photo) }}" alt="Photo" width="80"
+                        class="img-thumbnail">
+                    {% else %}
+                    <span class="text-muted">Aucune</span>
+                    {% endif %}
+                </td>
+                <td>{{ etudiant.numero_matricule }}</td>
+                <td>{{ etudiant.nom }}</td>
+                <td>{{ etudiant.prenom }}</td>
+                <td>{{ etudiant.email }}</td>
+                <td>{{ etudiant.sexe }}</td>
+                <td>{{ etudiant.telephone }}</td>
+                <td>{{ etudiant.adresse }}</td>
+                <td>{{ etudiant.date_inscription.strftime('%d/%m/%Y') }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- 🔧 Modal Modification Étudiant -->
+<!-- Modal de modification complète -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <form id="editForm" method="POST" enctype="multipart/form-data" class="modal-content">
+            <div class="modal-header bg-warning">
+                <h5 class="modal-title text-dark">Modifier Étudiant</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body row g-3">
+                <input type="hidden" name="id" id="edit-id">
+
+                <div class="col-md-6">
+                    <label for="edit-nom" class="form-label">Nom</label>
+                    <input type="text" name="nom" id="edit-nom" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-prenom" class="form-label">Prénom</label>
+                    <input type="text" name="prenom" id="edit-prenom" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-email" class="form-label">Email</label>
+                    <input type="email" name="email" id="edit-email" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-date_naissance" class="form-label">Date de naissance</label>
+                    <input type="date" name="date_naissance" id="edit-date_naissance" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-sexe" class="form-label">Sexe</label>
+                    <select name="sexe" id="edit-sexe" class="form-select" required>
+                        <option value="">-- Choisir --</option>
+                        <option value="Masculin">Masculin</option>
+                        <option value="Féminin">Féminin</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-etat_civil" class="form-label">État civil</label>
+                    <select name="etat_civil" id="edit-etat_civil" class="form-select" required>
+                        <option value="">-- Choisir --</option>
+                        <option value="Célibataire">Célibataire</option>
+                        <option value="Marié(e)">Marié(e)</option>
+                        <option value="Divorcé(e)">Divorcé(e)</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-nom_conjoint" class="form-label">Nom du conjoint</label>
+                    <input type="text" name="nom_conjoint" id="edit-nom_conjoint" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-adresse" class="form-label">Adresse</label>
+                    <input type="text" name="adresse" id="edit-adresse" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-telephone" class="form-label">Téléphone</label>
+                    <input type="text" name="telephone" id="edit-telephone" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-nom_tuteur" class="form-label">Nom du tuteur</label>
+                    <input type="text" name="nom_tuteur" id="edit-nom_tuteur" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-adresse_tuteur" class="form-label">Adresse du tuteur</label>
+                    <input type="text" name="adresse_tuteur" id="edit-adresse_tuteur" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-telephone_tuteur" class="form-label">Téléphone du tuteur</label>
+                    <input type="text" name="telephone_tuteur" id="edit-telephone_tuteur" class="form-control">
+                </div>
+                <div class="col-md-12">
+                    <label for="edit-allergies" class="form-label">Allergies</label>
+                    <textarea name="allergies" id="edit-allergies" class="form-control"></textarea>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-systeme_id" class="form-label">Système</label>
+                    <select name="systeme_id" id="edit-systeme_id" class="form-select" required>
+                        {% for systeme in systemes %}
+                        <option value="{{ systeme.id }}">{{ systeme.nom }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-promotion_id" class="form-label">Promotion</label>
+                    <select name="promotion_id" id="edit-promotion_id" class="form-select" required>
+                        {% for promotion in promotions %}
+                        <option value="{{ promotion.id }}">{{ promotion.nom }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-numero_matricule" class="form-label">Matricule</label>
+                    <input type="text" name="numero_matricule" id="edit-numero_matricule" class="form-control" readonly>
+                </div>
+                <div class="col-md-6">
+                    <label for="edit-photo" class="form-label">Photo</label>
+                    <input type="file" name="photo" id="edit-photo" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 📌 JQuery pour remplir la modale -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('.btn-edit').on('click', function () {
+        let id = $(this).data('id');
+        $('#editForm').attr('action', '/modifier_etudiant/' + id);
+
+        $('#edit-id').val(id);
+        $('#edit-nom').val($(this).data('nom'));
+        $('#edit-prenom').val($(this).data('prenom'));
+        $('#edit-email').val($(this).data('email'));
+        $('#edit-date_naissance').val($(this).data('date_naissance'));
+        $('#edit-sexe').val($(this).data('sexe'));
+        $('#edit-etat_civil').val($(this).data('etat_civil'));
+        $('#edit-nom_conjoint').val($(this).data('nom_conjoint'));
+        $('#edit-adresse').val($(this).data('adresse'));
+        $('#edit-telephone').val($(this).data('telephone'));
+        $('#edit-nom_tuteur').val($(this).data('nom_tuteur'));
+        $('#edit-adresse_tuteur').val($(this).data('adresse_tuteur'));
+        $('#edit-telephone_tuteur').val($(this).data('telephone_tuteur'));
+        $('#edit-allergies').val($(this).data('allergies'));
+        $('#edit-systeme_id').val($(this).data('systeme_id'));
+        $('#edit-promotion_id').val($(this).data('promotion_id'));
+        $('#edit-numero_matricule').val($(this).data('numero_matricule'));
+
+        // Le champ "photo" ne peut pas être prérempli pour des raisons de sécurité.
+        // Tu peux éventuellement afficher un aperçu à côté si tu enregistres le nom de fichier ailleurs.
+
+        $('#editModal').modal('show');
+    });
+</script>
+
+<!-- Script de recherche dynamique -->
+<script>
+
+    document.getElementById('recherche2').addEventListener('input', function () {
+        const filtre = this.value.toLowerCase();
+        const lignes = document.querySelectorAll('#tableEtudiants2 tbody tr');
+
+        lignes.forEach(ligne => {
+            const texte = ligne.textContent.toLowerCase();
+            ligne.style.display = texte.includes(filtre) ? '' : 'none';
+        });
+    });
+
+</script>
+
+{% endblock %}

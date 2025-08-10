@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Connexion{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h2>Connexion</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label for="email">Adresse email</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+            {% if verification_actif %}
+            <a href="{{ url_for('etudiant_inscription_email') }}" class="btn btn-secondary">Inscrire/Réinscription
+                Etudiants</a>
+            {% else %}
+            <div class="alert alert-warning mt-3" role="alert">
+                Les inscriptions sont actuellement <strong>fermées</strong>.
+            </div>
+            {% endif %}
+
+        </div>
+    </form>
+</div>
+{% endblock %}

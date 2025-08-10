@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Gestion des promotions</h2>
+
+    <!-- Bouton d'ajout -->
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
+        Ajouter une promotion
+    </button>
+
+    <!-- Champ de recherche -->
+    <div class="mb-3">
+        <input type="text" id="recherche" class="form-control" placeholder="Rechercher une promotion...">
+    </div>
+
+    <!-- Tableau des promotions -->
+    <table class="table table-bordered table-hover" id="tablePromotions">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Option</th>
+                <th>Système</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in promotions %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ p.nom }}</td>
+                <td>{{ p.option_nom }}</td>
+                <td>{{ p.systeme_nom }}</td>
+                <td>
+                    <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{ p.id }}">
+                        Modifier
+                    </button>
+                    <a href="{{ url_for('delete_promotion', id=p.id) }}" class="btn btn-sm btn-danger"
+                        onclick="return confirm('Confirmer la suppression ?')">Supprimer</a>
+                </td>
+            </tr>
+
+            <!-- Modal de modification -->
+            <div class="modal fade" id="editModal{{ p.id }}" tabindex="-1" aria-labelledby="editModalLabel{{ p.id }}"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <form method="POST" action="{{ url_for('update_promotion', id=p.id) }}">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modifier la promotion</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label>Nom</label>
+                                    <input type="text" name="nom" class="form-control" value="{{ p.nom }}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Option</label>
+                                    <select name="option_id" class="form-select" required>
+                                        {% for opt in options %}
+                                        <option value="{{ opt.id }}" {% if opt.nom==p.option_nom %}selected{% endif %}>
+                                            {{ opt.nom }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Système</label>
+                                    <select name="systeme_id" class="form-select" required>
+                                        {% for s in systemes %}
+                                        <option value="{{ s.id }}" {% if s.nom==p.systeme_nom %}selected{% endif %}>{{
+                                            s.nom }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal d'ajout -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="POST" action="{{ url_for('add_promotion') }}">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ajouter une promotion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>Nom</label>
+                        <input type="text" name="nom" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Option</label>
+                        <select name="option_id" class="form-select" required>
+                            {% for opt in options %}
+                            <option value="{{ opt.id }}">{{ opt.nom }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Système</label>
+                        <select name="systeme_id" class="form-select" required>
+                            {% for s in systemes %}
+                            <option value="{{ s.id }}">{{ s.nom }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Script de recherche dynamique -->
+<script>
+    document.getElementById('recherche').addEventListener('input', function () {
+        const filtre = this.value.toLowerCase();
+        const lignes = document.querySelectorAll('#tablePromotions tbody tr');
+        lignes.forEach(ligne => {
+            const texte = ligne.textContent.toLowerCase();
+            ligne.style.display = texte.includes(filtre) ? '' : 'none';
+        });
+    });
+
+</script>
+{% endblock %}

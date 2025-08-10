@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h3 class="mb-4">Gestion des Départements</h3>
+
+    <!-- Formulaire d'ajout -->
+    <form action="{{ url_for('add_departement') }}" method="POST" class="mb-4">
+        <div class="row g-2">
+            <div class="col-md-6">
+                <input type="text" name="nom" class="form-control" placeholder="Nom du département" required>
+            </div>
+            <div class="col-md-4">
+                <select name="faculte_id" class="form-select" required>
+                    <option value="" disabled selected>-- Faculté --</option>
+                    {% for faculte in facultes %}
+                    <option value="{{ faculte.id }}">{{ faculte.nom }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">Ajouter</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Champ de recherche -->
+    <div class="mb-3">
+        <input type="text" id="recherche" class="form-control" placeholder="Rechercher un département...">
+    </div>
+
+    <!-- Tableau des départements -->
+    <table class="table table-bordered table-striped" id="tableDepartements">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Faculté</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for departement in departements %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ departement.nom }}</td>
+                <td>{{ departement.faculte_nom }}</td>
+                <td>
+                    <button class="btn btn-sm btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#editModal{{ departement.id }}">
+                        Modifier
+                    </button>
+                    <a href="{{ url_for('delete_departement', id=departement.id) }}" class="btn btn-sm btn-danger"
+                        onclick="return confirm('Confirmez-vous la suppression de ce département ?');">
+                        Supprimer
+                    </a>
+                </td>
+            </tr>
+
+            <!-- Modal modification -->
+            <div class="modal fade" id="editModal{{ departement.id }}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form action="{{ url_for('update_departement', id=departement.id) }}" method="POST">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modifier le département</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <input type="text" name="nom" class="form-control" value="{{ departement.nom }}"
+                                        required>
+                                </div>
+                                <div class="mb-3">
+                                    <select name="faculte_id" class="form-select" required>
+                                        {% for faculte in facultes %}
+                                        <option value="{{ faculte.id }}" {% if faculte.id==departement.faculte_id
+                                            %}selected{% endif %}>
+                                            {{ faculte.nom }}
+                                        </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Script de recherche dynamique -->
+<script>
+    document.getElementById('recherche').addEventListener('input', function () {
+        const filtre = this.value.toLowerCase();
+        const lignes = document.querySelectorAll('#tableDepartements tbody tr');
+        lignes.forEach(ligne => {
+            const texte = ligne.textContent.toLowerCase();
+            ligne.style.display = texte.includes(filtre) ? '' : 'none';
+        });
+    });
+
+</script>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h3 class="mb-4">📄 Documents de {{ etudiant.nom }} {{ etudiant.prenom }}</h3>
+
+    <div class="row">
+        {% for label, doc in {
+        "Bulletin 1": etudiant.bulletin1,
+        "Bulletin 2": etudiant.bulletin2,
+        "Attestation de réussite": etudiant.attestation_reussite,
+        "Attestation de bonne conduite": etudiant.attestation_moeurs,
+        "Certificat de naissance": etudiant.certificat_naissance
+        }.items() %}
+        <div class="col-md-6 mb-4">
+            <h6>{{ label }}</h6>
+            {% if doc %}
+            {% set ext = doc.split('.')[-1]|lower %}
+            {% if ext in ['pdf'] %}
+            <embed src="{{ url_for('static', filename='uploads/' ~ doc) }}" width="100%" height="400px"
+                type="application/pdf">
+            {% elif ext in ['jpg', 'jpeg', 'png'] %}
+            <img src="{{ url_for('static', filename='uploads/' ~ doc) }}" alt="{{ label }}" class="img-fluid">
+            {% else %}
+            <a href="{{ url_for('static', filename='uploads/' ~ doc) }}" target="_blank">Télécharger {{ label }}</a>
+            {% endif %}
+            {% else %}
+            <p class="text-muted fst-italic">Non fourni</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url_for('manage_etudiants') }}" class="btn btn-secondary">⬅ Retour</a>
+</div>
+{% endblock %}

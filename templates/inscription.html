@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h3>Formulaire d'inscription</h3>
+    <form action="{{ url_for('inscription_etudiant') }}" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Nom</label>
+                <input type="text" class="form-control" name="nom" required>
+            </div>
+            <div class="col-md-6">
+                <label>Postnom</label>
+                <input type="text" class="form-control" name="postnom" required>
+            </div>
+            <div class="col-md-6">
+                <label>Prénom</label>
+                <input type="text" class="form-control" name="prenom" required>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" value="{{ email_connecte }}" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                <label>Date de naissance</label>
+                <input type="date" class="form-control" name="date_naissance" id="date_naissance" required>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>Sexe</label>
+                <select class="form-control" name="sexe" required>
+                    <option>Masculin</option>
+                    <option>Féminin</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>État civil</label>
+                <select class="form-control" name="etat_civil" id="etat_civil" required>
+                    <option>Célibataire</option>
+                    <option>Marié(e)</option>
+                    <option>Divorcé(e)</option>
+                    <option>Veuf(ve)</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 mt-3" id="conjoint_field" style="display: none;">
+                <label>Nom du conjoint</label>
+                <input type="text" class="form-control" name="nom_conjoint">
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>Adresse</label>
+                <input type="text" class="form-control" name="adresse" required>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>Téléphone</label>
+                <input type="text" class="form-control" name="telephone" required>
+            </div>
+
+            <!-- Capture ou Upload de Photo -->
+            <div class="col-md-6 mt-3">
+                <label>Photo</label>
+                <input type="file" class="form-control" name="photo" accept="image/*">
+                <button type="button" class="btn btn-secondary mt-2" id="captureBtn">Capturer via webcam</button>
+                <div id="camera" class="mt-2" style="display: none;">
+                    <video id="video" width="300" autoplay></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <input type="hidden" name="photo_data" id="photo_data">
+                    <button type="button" class="btn btn-primary mt-2" id="snap">Prendre photo</button>
+                </div>
+            </div>
+
+            <!-- Tuteur -->
+            <div class="col-md-6 mt-3" id="tuteur_fields" style="display: none;">
+                <label>Nom du tuteur</label>
+                <input type="text" class="form-control" name="nom_tuteur">
+                <label class="mt-2">Adresse du tuteur</label>
+                <input type="text" class="form-control" name="adresse_tuteur">
+                <label class="mt-2">Téléphone du tuteur</label>
+                <input type="text" class="form-control" name="telephone_tuteur">
+            </div>
+
+            <div class="col-md-12 mt-3">
+                <label>Allergies (facultatif)</label>
+                <textarea class="form-control" name="allergies"></textarea>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>Système</label>
+                <select class="form-control" name="systeme_id" required>
+                    {% for s in systemes %}
+                    <option value="{{ s.id }}">{{ s.nom }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>Promotion</label>
+                <select class="form-control" name="promotion_id" required>
+                    {% for p in promotions %}
+                    <option value="{{ p.id }}">{{ p.nom }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>Bulletin 5e Année</label>
+                <input type="file" class="form-control" name="bulletin1" accept=".pdf,image/*" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                <label>Bulletin 6e Année</label>
+                <input type="file" class="form-control" name="bulletin2" accept=".pdf,image/*" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                <label>Attestation de Réussite</label>
+                <input type="file" class="form-control" name="attestation_reussite" accept=".pdf,image/*" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                <label>Attestation de Bonne Vie et Mœurs</label>
+                <input type="file" class="form-control" name="attestation_moeurs" accept=".pdf,image/*" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                <label>Certificat de Naissance</label>
+                <input type="file" class="form-control" name="certificat_naissance" accept=".pdf,image/*" required>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>Type d'inscription</label>
+                <select name="inscription_id" id="inscriptionSelect" class="form-control" required>
+                    <option value="">-- Choisir --</option>
+                    {% for ins in inscriptions %}
+                    <option value="{{ ins.id }}" data-montant="{{ ins.montant }}" data-devise="{{ ins.devise }}">
+                        {{ ins.nom }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>Montant</label>
+                <input type="text" class="form-control" name="montant_inscription" id="montant" readonly>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <label>Devise</label>
+                <input type="text" class="form-control" name="devise" id="devise" readonly>
+            </div>
+
+
+            <div class="col-md-12 mt-4">
+                <button type="submit" class="btn btn-success">Soumettre</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#etat_civil').change(function () {
+            if ($(this).val() === 'Marié(e)') {
+                $('#conjoint_field').show();
+            } else {
+                $('#conjoint_field').hide();
+            }
+        });
+
+        $('#date_naissance').on('change', function () {
+            const dob = new Date($(this).val());
+            const age = new Date().getFullYear() - dob.getFullYear();
+            if (age >= 18 && age <= 20) {
+                $('#tuteur_fields').show();
+            } else {
+                $('#tuteur_fields').hide();
+            }
+        });
+
+        $('#captureBtn').click(function () {
+            $('#camera').toggle();
+            const video = document.getElementById('video');
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    video.srcObject = stream;
+                });
+        });
+
+        $('#snap').click(function () {
+            const canvas = document.getElementById('canvas');
+            const video = document.getElementById('video');
+            const ctx = canvas.getContext('2d');
+
+            // Redimensionner à 400px de largeur max (proportionnellement)
+            const maxWidth = 400;
+            const scale = maxWidth / video.videoWidth;
+            const newWidth = video.videoWidth * scale;
+            const newHeight = video.videoHeight * scale;
+
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+            ctx.drawImage(video, 0, 0, newWidth, newHeight);
+
+            // Compression JPEG avec qualité 0.6
+            const compressedData = canvas.toDataURL('image/jpeg', 0.6);
+            $('#photo_data').val(compressedData);
+            alert("Photo capturée et compressée !");
+        });
+
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('inscriptionSelect').addEventListener('change', function () {
+            const selected = this.options[this.selectedIndex];
+            document.getElementById('montant').value = selected.getAttribute('data-montant') || '';
+            document.getElementById('devise').value = selected.getAttribute('data-devise') || '';
+        });
+    });
+
+</script>
+{% endblock %}

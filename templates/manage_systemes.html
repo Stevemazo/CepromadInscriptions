@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h3 class="mb-4">Gestion des Systèmes</h3>
+
+    <!-- Formulaire d'ajout -->
+    <form action="{{ url_for('add_systeme') }}" method="POST" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="nom" class="form-control" placeholder="Nom du système" required>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+    </form>
+
+    <!-- Champ de recherche -->
+    <div class="mb-3">
+        <input type="text" id="recherche" class="form-control" placeholder="Rechercher un système...">
+    </div>
+
+    <!-- Tableau des systèmes -->
+    <table class="table table-bordered table-striped" id="tableSystemes">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for systeme in systemes %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ systeme.nom }}</td>
+                <td>
+                    <button class="btn btn-sm btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#editModal{{ systeme.id }}">
+                        Modifier
+                    </button>
+                    <a href="{{ url_for('delete_systeme', id=systeme.id) }}" class="btn btn-sm btn-danger"
+                        onclick="return confirm('Voulez-vous vraiment supprimer ce système ?');">
+                        Supprimer
+                    </a>
+                </td>
+            </tr>
+
+            <!-- Modal de modification -->
+            <div class="modal fade" id="editModal{{ systeme.id }}" tabindex="-1"
+                aria-labelledby="editModalLabel{{ systeme.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form action="{{ url_for('update_systeme', id=systeme.id) }}" method="POST">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modifier le système</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" name="nom" class="form-control" value="{{ systeme.nom }}" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Script de recherche dynamique -->
+<script>
+    document.getElementById('recherche').addEventListener('input', function () {
+        const filtre = this.value.toLowerCase();
+        const lignes = document.querySelectorAll('#tableSystemes tbody tr');
+        lignes.forEach(ligne => {
+            const texte = ligne.textContent.toLowerCase();
+            ligne.style.display = texte.includes(filtre) ? '' : 'none';
+        });
+    });
+
+</script>
+{% endblock %}

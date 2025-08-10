@@ -1,0 +1,951 @@
+([('app_gui.exe',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\build\\app_gui\\app_gui.exe',
+   'EXECUTABLE'),
+  ('webview\\lib\\Microsoft.Web.WebView2.Core.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\lib\\Microsoft.Web.WebView2.Core.dll',
+   'BINARY'),
+  ('webview\\lib\\WebBrowserInterop.x86.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\lib\\WebBrowserInterop.x86.dll',
+   'BINARY'),
+  ('webview\\lib\\runtimes\\win-x64\\native\\WebView2Loader.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\lib\\runtimes\\win-x64\\native\\WebView2Loader.dll',
+   'BINARY'),
+  ('webview\\lib\\runtimes\\win-x86\\native\\WebView2Loader.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\lib\\runtimes\\win-x86\\native\\WebView2Loader.dll',
+   'BINARY'),
+  ('webview\\lib\\runtimes\\win-arm64\\native\\WebView2Loader.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\lib\\runtimes\\win-arm64\\native\\WebView2Loader.dll',
+   'BINARY'),
+  ('webview\\lib\\Microsoft.Web.WebView2.WinForms.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\lib\\Microsoft.Web.WebView2.WinForms.dll',
+   'BINARY'),
+  ('webview\\lib\\WebBrowserInterop.x64.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\lib\\WebBrowserInterop.x64.dll',
+   'BINARY'),
+  ('python38.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\python38.dll',
+   'BINARY'),
+  ('pythonnet\\runtime\\Python.Runtime.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pythonnet\\runtime\\Python.Runtime.dll',
+   'BINARY'),
+  ('clr_loader\\ffi\\dlls\\x86\\ClrLoader.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\clr_loader\\ffi\\dlls\\x86\\ClrLoader.dll',
+   'BINARY'),
+  ('clr_loader\\ffi\\dlls\\amd64\\ClrLoader.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\clr_loader\\ffi\\dlls\\amd64\\ClrLoader.dll',
+   'BINARY'),
+  ('select.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\select.pyd',
+   'EXTENSION'),
+  ('_lzma.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_lzma.pyd',
+   'EXTENSION'),
+  ('_bz2.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
+  ('unicodedata.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_socket.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('_hashlib.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
+  ('_ctypes.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_ctypes.pyd',
+   'EXTENSION'),
+  ('_overlapped.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_overlapped.pyd',
+   'EXTENSION'),
+  ('_ssl.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_ssl.pyd',
+   'EXTENSION'),
+  ('_asyncio.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_asyncio.pyd',
+   'EXTENSION'),
+  ('_queue.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_queue.pyd',
+   'EXTENSION'),
+  ('_multiprocessing.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_multiprocessing.pyd',
+   'EXTENSION'),
+  ('pyexpat.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\pyexpat.pyd',
+   'EXTENSION'),
+  ('_decimal.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
+  ('_brotli.cp38-win_amd64.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\_brotli.cp38-win_amd64.pyd',
+   'EXTENSION'),
+  ('_cffi_backend.cp38-win_amd64.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\_cffi_backend.cp38-win_amd64.pyd',
+   'EXTENSION'),
+  ('cryptography\\hazmat\\bindings\\_rust.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\cryptography\\hazmat\\bindings\\_rust.pyd',
+   'EXTENSION'),
+  ('bcrypt\\_bcrypt.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\bcrypt\\_bcrypt.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md__mypyc.cp38-win_amd64.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\charset_normalizer\\md__mypyc.cp38-win_amd64.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md.cp38-win_amd64.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\charset_normalizer\\md.cp38-win_amd64.pyd',
+   'EXTENSION'),
+  ('markupsafe\\_speedups.cp38-win_amd64.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\markupsafe\\_speedups.cp38-win_amd64.pyd',
+   'EXTENSION'),
+  ('_mysql_connector.cp38-win_amd64.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\_mysql_connector.cp38-win_amd64.pyd',
+   'EXTENSION'),
+  ('_elementtree.pyd',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\_elementtree.pyd',
+   'EXTENSION'),
+  ('VCRUNTIME140.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('libcrypto-1_1.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\libcrypto-1_1.dll',
+   'BINARY'),
+  ('libffi-7.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\libffi-7.dll',
+   'BINARY'),
+  ('libssl-1_1.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\DLLs\\libssl-1_1.dll',
+   'BINARY'),
+  ('python3.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\python3.dll',
+   'BINARY'),
+  ('libmysql.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\libmysql.dll',
+   'BINARY'),
+  ('libcrypto-1_1-x64.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\libcrypto-1_1-x64.dll',
+   'BINARY'),
+  ('VCRUNTIME140_1.dll', 'C:\\Windows\\system32\\VCRUNTIME140_1.dll', 'BINARY'),
+  ('MSVCP140.dll', 'C:\\Windows\\system32\\MSVCP140.dll', 'BINARY'),
+  ('libssl-1_1-x64.dll',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\libssl-1_1-x64.dll',
+   'BINARY'),
+  ('static\\css\\style.css',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\css\\style.css',
+   'DATA'),
+  ('static\\images\\armoiries.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\images\\armoiries.png',
+   'DATA'),
+  ('static\\images\\flag1.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\images\\flag1.png',
+   'DATA'),
+  ('static\\js\\alertes.js',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\js\\alertes.js',
+   'DATA'),
+  ('static\\js\\alertes.mp3',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\js\\alertes.mp3',
+   'DATA'),
+  ('static\\js\\script.js',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\js\\script.js',
+   'DATA'),
+  ('static\\uploads\\07954925-9212-4510-bc23-92f249f67ba3_SOCIMEX_SHOP_15KINGASANI_1.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\07954925-9212-4510-bc23-92f249f67ba3_SOCIMEX_SHOP_15KINGASANI_1.pdf',
+   'DATA'),
+  ('static\\uploads\\09d0fa56-3a04-40e3-8f47-337f7249343c_SOCIMEX_SHOP_15KINGASANI.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\09d0fa56-3a04-40e3-8f47-337f7249343c_SOCIMEX_SHOP_15KINGASANI.pdf',
+   'DATA'),
+  ('static\\uploads\\0e25910b-572f-4444-810b-fad5973113d5_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\0e25910b-572f-4444-810b-fad5973113d5_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\10095a50-ed09-4275-930e-0cf82b2e73be_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\10095a50-ed09-4275-930e-0cf82b2e73be_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\10650652-d270-4155-8a7c-9489a2b5aba4_IMG_20250609_0007_page-0001.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\10650652-d270-4155-8a7c-9489a2b5aba4_IMG_20250609_0007_page-0001.jpg',
+   'DATA'),
+  ('static\\uploads\\1094c0e7-92a7-4534-b9da-00d922050d26_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\1094c0e7-92a7-4534-b9da-00d922050d26_11.jpg',
+   'DATA'),
+  ('static\\uploads\\127094fb-0ca9-4b9f-a37c-381919f45195_44.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\127094fb-0ca9-4b9f-a37c-381919f45195_44.jpg',
+   'DATA'),
+  ('static\\uploads\\179f5194-6884-483a-984b-a8c2fb3ffde2_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\179f5194-6884-483a-984b-a8c2fb3ffde2_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\19bcf534-5fd4-4604-a7ce-24ae87defc0e_CV_MAZO.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\19bcf534-5fd4-4604-a7ce-24ae87defc0e_CV_MAZO.pdf',
+   'DATA'),
+  ('static\\uploads\\1b1abe38-a5d3-456e-835c-6a9adf7d98a0_payment_invoice_112261782.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\1b1abe38-a5d3-456e-835c-6a9adf7d98a0_payment_invoice_112261782.pdf',
+   'DATA'),
+  ('static\\uploads\\1d3e0cc7-f2ec-41f5-aed6-4cabf5346efe_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\1d3e0cc7-f2ec-41f5-aed6-4cabf5346efe_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\1e11f74a-8964-469d-8ea7-ad507f9f46ec_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\1e11f74a-8964-469d-8ea7-ad507f9f46ec_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\2184b2cb-7158-4508-a32b-4c499aca2cb7_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\2184b2cb-7158-4508-a32b-4c499aca2cb7_4.jpg',
+   'DATA'),
+  ('static\\uploads\\274d839f-c8bf-4b24-8820-175d06ba0dfd_lettre_de_motivation.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\274d839f-c8bf-4b24-8820-175d06ba0dfd_lettre_de_motivation.pdf',
+   'DATA'),
+  ('static\\uploads\\27751fef-0636-4f0a-b58d-ac69e6b82731_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\27751fef-0636-4f0a-b58d-ac69e6b82731_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\27a2b72c-a7f1-4ed6-8ddd-0d44b9c097dc_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\27a2b72c-a7f1-4ed6-8ddd-0d44b9c097dc_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\2a407ec2-fcbc-4e0f-bfb1-6e9e3e7c65b2_CV_MAZO.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\2a407ec2-fcbc-4e0f-bfb1-6e9e3e7c65b2_CV_MAZO.pdf',
+   'DATA'),
+  ('static\\uploads\\3c80af3c-947e-4d06-90ff-6ea32faf72b6_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\3c80af3c-947e-4d06-90ff-6ea32faf72b6_11.jpg',
+   'DATA'),
+  ('static\\uploads\\41b8d5a7-8890-4bb7-8a55-26f3d78cb20f.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\41b8d5a7-8890-4bb7-8a55-26f3d78cb20f.png',
+   'DATA'),
+  ('static\\uploads\\42c6f7cf-699c-4a20-aeb1-b43c5df2e399_statistiques_mariages.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\42c6f7cf-699c-4a20-aeb1-b43c5df2e399_statistiques_mariages.pdf',
+   'DATA'),
+  ('static\\uploads\\444.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\444.jpg',
+   'DATA'),
+  ('static\\uploads\\460c5930-030b-4a41-baa8-0e0efa949184_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\460c5930-030b-4a41-baa8-0e0efa949184_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\48816c07-b109-4d42-8e78-a1a692583238_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\48816c07-b109-4d42-8e78-a1a692583238_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\4b0442de-ba7b-4154-a5c1-7ad254b08583_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\4b0442de-ba7b-4154-a5c1-7ad254b08583_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\4b1b5027-5bc0-4b5f-9685-6c8de40cbd84_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\4b1b5027-5bc0-4b5f-9685-6c8de40cbd84_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\4b6ebb48-f4e6-4b4e-9e89-6f144befcb5e_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\4b6ebb48-f4e6-4b4e-9e89-6f144befcb5e_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\4b844bc1-1ca0-47b7-b3a0-af2dcde5fa21_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\4b844bc1-1ca0-47b7-b3a0-af2dcde5fa21_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\4e285fa6-894b-40d3-90fe-5ed244691fd3_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\4e285fa6-894b-40d3-90fe-5ed244691fd3_11.jpg',
+   'DATA'),
+  ('static\\uploads\\50069b33-4081-487a-8013-c3ec11b48039_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\50069b33-4081-487a-8013-c3ec11b48039_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\50ba5984-ed27-45d0-a9b7-8c937b03963a_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\50ba5984-ed27-45d0-a9b7-8c937b03963a_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\5393a563-e64e-439b-a551-107dec885488_lettre_de_motivation.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\5393a563-e64e-439b-a551-107dec885488_lettre_de_motivation.pdf',
+   'DATA'),
+  ('static\\uploads\\570cf152-adc2-4eb5-8517-34ef06fd213c_CV_MAZO.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\570cf152-adc2-4eb5-8517-34ef06fd213c_CV_MAZO.pdf',
+   'DATA'),
+  ('static\\uploads\\59f6a2d4-45bc-4528-b19f-2775e074fa6b.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\59f6a2d4-45bc-4528-b19f-2775e074fa6b.png',
+   'DATA'),
+  ('static\\uploads\\5df31f6e-e098-482f-adf7-0c6bec7b4f11_IMG_20250609_0007_page-0001.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\5df31f6e-e098-482f-adf7-0c6bec7b4f11_IMG_20250609_0007_page-0001.jpg',
+   'DATA'),
+  ('static\\uploads\\60ed20dc-c88c-4abd-8366-545cd2b9c3fa_statistiques_mariages.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\60ed20dc-c88c-4abd-8366-545cd2b9c3fa_statistiques_mariages.pdf',
+   'DATA'),
+  ('static\\uploads\\60ff7840-07b5-453d-b093-852f9d8c7e5b_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\60ff7840-07b5-453d-b093-852f9d8c7e5b_4.jpg',
+   'DATA'),
+  ('static\\uploads\\6286a4ce-88bf-4c1e-8290-ceec9427f777_BORDEREAU_BOKULUTU.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\6286a4ce-88bf-4c1e-8290-ceec9427f777_BORDEREAU_BOKULUTU.pdf',
+   'DATA'),
+  ('static\\uploads\\62fc023b-4e2b-436e-b2d4-de08fe1bb353_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\62fc023b-4e2b-436e-b2d4-de08fe1bb353_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\64d9eacd-f6a5-4044-8133-e950c033cf69_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\64d9eacd-f6a5-4044-8133-e950c033cf69_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\695e5700-52ab-471f-bd61-8bd67ba8951b_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\695e5700-52ab-471f-bd61-8bd67ba8951b_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\6eff4de4-703b-48ea-93ac-93779f1032bb_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\6eff4de4-703b-48ea-93ac-93779f1032bb_11.jpg',
+   'DATA'),
+  ('static\\uploads\\70cf52ed-f353-4437-a6c6-8c0daaf33ca9_IMG_20220402_100401_905.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\70cf52ed-f353-4437-a6c6-8c0daaf33ca9_IMG_20220402_100401_905.jpg',
+   'DATA'),
+  ('static\\uploads\\7338e2cd-db95-4aa5-9516-7d62b3861793_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\7338e2cd-db95-4aa5-9516-7d62b3861793_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\75a82e66-7a3d-4451-a6bf-bbb5583d3a47_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\75a82e66-7a3d-4451-a6bf-bbb5583d3a47_4.jpg',
+   'DATA'),
+  ('static\\uploads\\7e215b19-6156-4d4b-96a2-2ce68e74df87_33.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\7e215b19-6156-4d4b-96a2-2ce68e74df87_33.jpg',
+   'DATA'),
+  ('static\\uploads\\7f8a274c-49bf-4968-945b-7094253cfaf0_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\7f8a274c-49bf-4968-945b-7094253cfaf0_4.jpg',
+   'DATA'),
+  ('static\\uploads\\82e504e1-ce15-43f9-93d5-b0b7929b5cc9_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\82e504e1-ce15-43f9-93d5-b0b7929b5cc9_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\83397dc8-6dcf-43d9-94b7-a971d28b766a_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\83397dc8-6dcf-43d9-94b7-a971d28b766a_11.jpg',
+   'DATA'),
+  ('static\\uploads\\839027f4-949f-4d83-9c23-faaca324be64_statistiques_mariages.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\839027f4-949f-4d83-9c23-faaca324be64_statistiques_mariages.pdf',
+   'DATA'),
+  ('static\\uploads\\84f47227-9407-40a6-b417-8cf11db61589_444.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\84f47227-9407-40a6-b417-8cf11db61589_444.jpg',
+   'DATA'),
+  ('static\\uploads\\86accd61-8dba-4754-bdda-9529e52ab811_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\86accd61-8dba-4754-bdda-9529e52ab811_11.jpg',
+   'DATA'),
+  ('static\\uploads\\873d206a-cabd-4532-ad46-003ce2ae12a1_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\873d206a-cabd-4532-ad46-003ce2ae12a1_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\8b56f527-1b87-4568-9582-7f9df265a032_CV_MAZO.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\8b56f527-1b87-4568-9582-7f9df265a032_CV_MAZO.pdf',
+   'DATA'),
+  ('static\\uploads\\8ca27a2e-e25d-47ed-ab40-cd7c75b362c6_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\8ca27a2e-e25d-47ed-ab40-cd7c75b362c6_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\8f6238f5-0d36-443e-a41d-82d0d2c4fe46_statistiques_mariages.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\8f6238f5-0d36-443e-a41d-82d0d2c4fe46_statistiques_mariages.pdf',
+   'DATA'),
+  ('static\\uploads\\91d968fe-596d-41d5-8bb6-b72f9a9355e4_statistiques_mariages_1.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\91d968fe-596d-41d5-8bb6-b72f9a9355e4_statistiques_mariages_1.pdf',
+   'DATA'),
+  ('static\\uploads\\990a56a5-512b-4459-bd6f-351d56c510e0_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\990a56a5-512b-4459-bd6f-351d56c510e0_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\9b6288f5-331a-438f-9c65-520a85a4f449_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\9b6288f5-331a-438f-9c65-520a85a4f449_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\9dd763e1-2ff0-4820-9e35-c8ac46ff680c_statistiques_mariages.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\9dd763e1-2ff0-4820-9e35-c8ac46ff680c_statistiques_mariages.pdf',
+   'DATA'),
+  ('static\\uploads\\IMG_20220402_100401_905.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\IMG_20220402_100401_905.jpg',
+   'DATA'),
+  ('static\\uploads\\IMG_20220403_135120_079.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\IMG_20220403_135120_079.jpg',
+   'DATA'),
+  ('static\\uploads\\IMG_20250609_0007_page-0001.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\IMG_20250609_0007_page-0001.jpg',
+   'DATA'),
+  ('static\\uploads\\a278dcf8-508d-4913-9bd7-b16211cf8daf_CV_MAZO.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\a278dcf8-508d-4913-9bd7-b16211cf8daf_CV_MAZO.pdf',
+   'DATA'),
+  ('static\\uploads\\a38bf7ad-3609-4a47-9bf4-ead6c55a5190_33.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\a38bf7ad-3609-4a47-9bf4-ead6c55a5190_33.jpg',
+   'DATA'),
+  ('static\\uploads\\a7afce38-3754-440d-9874-2c9c49be478c_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\a7afce38-3754-440d-9874-2c9c49be478c_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\a80d754b-02d1-4b3e-89a3-ed012db281ae_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\a80d754b-02d1-4b3e-89a3-ed012db281ae_4.jpg',
+   'DATA'),
+  ('static\\uploads\\aa6c4a31-6c02-4e4d-a311-f9bd0b1d6692_SOCIMEX_SHOP_15KINGASANI.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\aa6c4a31-6c02-4e4d-a311-f9bd0b1d6692_SOCIMEX_SHOP_15KINGASANI.pdf',
+   'DATA'),
+  ('static\\uploads\\ab6530f9-c31e-4722-97b0-081d9512cd39_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\ab6530f9-c31e-4722-97b0-081d9512cd39_11.jpg',
+   'DATA'),
+  ('static\\uploads\\ad617038-3540-4fb0-b219-b40cf5893c27_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\ad617038-3540-4fb0-b219-b40cf5893c27_11.jpg',
+   'DATA'),
+  ('static\\uploads\\ae79d999-149a-48a0-991d-5c7023ffa899_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\ae79d999-149a-48a0-991d-5c7023ffa899_11.jpg',
+   'DATA'),
+  ('static\\uploads\\aef4a312-db8f-41db-bb93-1345f9bed618_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\aef4a312-db8f-41db-bb93-1345f9bed618_4.jpg',
+   'DATA'),
+  ('static\\uploads\\b2050b8c-162c-4793-9850-396cb33a8dc1_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\b2050b8c-162c-4793-9850-396cb33a8dc1_11.jpg',
+   'DATA'),
+  ('static\\uploads\\b556d605-6c8d-477d-abc8-dccf978ff2ce_statistiques_mariages.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\b556d605-6c8d-477d-abc8-dccf978ff2ce_statistiques_mariages.pdf',
+   'DATA'),
+  ('static\\uploads\\b87ca980-4cac-4af1-84a1-3da8f0364d20_statistiques_mariages.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\b87ca980-4cac-4af1-84a1-3da8f0364d20_statistiques_mariages.pdf',
+   'DATA'),
+  ('static\\uploads\\b9ad5d06-549f-44d8-9933-7f9f66c6c1c0_IMG_20250609_0007_page-0001.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\b9ad5d06-549f-44d8-9933-7f9f66c6c1c0_IMG_20250609_0007_page-0001.jpg',
+   'DATA'),
+  ('static\\uploads\\ba5409bc-4284-49dd-8615-05103867ce78_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\ba5409bc-4284-49dd-8615-05103867ce78_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\c63bb70e-bbfc-43af-b8f9-c1a4273a63c1_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\c63bb70e-bbfc-43af-b8f9-c1a4273a63c1_11.jpg',
+   'DATA'),
+  ('static\\uploads\\c8095638-6ed3-451f-8416-d33774cef217_44.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\c8095638-6ed3-451f-8416-d33774cef217_44.jpg',
+   'DATA'),
+  ('static\\uploads\\cb39aa39-4bb7-4fa9-baf3-7bb250eb36ab_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\cb39aa39-4bb7-4fa9-baf3-7bb250eb36ab_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\cc53784c-d1b5-4835-a43d-95597ff7486f_lettre_de_motivation.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\cc53784c-d1b5-4835-a43d-95597ff7486f_lettre_de_motivation.pdf',
+   'DATA'),
+  ('static\\uploads\\cccc3846-00a8-4754-954e-f86e26c6fff9_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\cccc3846-00a8-4754-954e-f86e26c6fff9_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\cdc2d612-1110-410b-ba59-dcaad19a8865_444.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\cdc2d612-1110-410b-ba59-dcaad19a8865_444.jpg',
+   'DATA'),
+  ('static\\uploads\\d02ed37f-712c-4957-8f97-e0b3b4768131_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\d02ed37f-712c-4957-8f97-e0b3b4768131_11.jpg',
+   'DATA'),
+  ('static\\uploads\\d37e098c-d21f-4d0f-9fae-a5cde45d187f_BORDEREAU_BOKULUTU.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\d37e098c-d21f-4d0f-9fae-a5cde45d187f_BORDEREAU_BOKULUTU.pdf',
+   'DATA'),
+  ('static\\uploads\\d399d41a-7061-4b3c-b311-87e8b20d5597_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\d399d41a-7061-4b3c-b311-87e8b20d5597_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\d7d8215e-9cd8-4090-9fd7-d39af2e10395_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\d7d8215e-9cd8-4090-9fd7-d39af2e10395_4.jpg',
+   'DATA'),
+  ('static\\uploads\\d80d6f4e-2aa0-46b9-a67a-f5b446a1bb5f_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\d80d6f4e-2aa0-46b9-a67a-f5b446a1bb5f_4.jpg',
+   'DATA'),
+  ('static\\uploads\\d9ef405a-21f1-4832-924f-a4b9d31475a0_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\d9ef405a-21f1-4832-924f-a4b9d31475a0_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\dc347ab9-9cf1-4379-89e5-c213c204ee13_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\dc347ab9-9cf1-4379-89e5-c213c204ee13_4.jpg',
+   'DATA'),
+  ('static\\uploads\\dcfe3bab-a6a0-4876-b471-03c059e1dcd6_IMG_20220329_180315_119.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\dcfe3bab-a6a0-4876-b471-03c059e1dcd6_IMG_20220329_180315_119.jpg',
+   'DATA'),
+  ('static\\uploads\\de0671f6-4636-485e-8ea4-a26fa666ad00_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\de0671f6-4636-485e-8ea4-a26fa666ad00_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\df8b208e-ba71-4f0b-bccf-2e6b28b67527_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\df8b208e-ba71-4f0b-bccf-2e6b28b67527_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\e0a51a42-a927-4f27-8d39-1ab5f1fbfb7b_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\e0a51a42-a927-4f27-8d39-1ab5f1fbfb7b_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\e2d162c6-f7f7-431b-8ce3-f33e9075abf9_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\e2d162c6-f7f7-431b-8ce3-f33e9075abf9_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\e365d462-cc50-4354-b382-160c3d3365b9_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\e365d462-cc50-4354-b382-160c3d3365b9_4.jpg',
+   'DATA'),
+  ('static\\uploads\\e5c8a22c-556c-4610-9750-ed6fc30e8475_CV_MAZO.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\e5c8a22c-556c-4610-9750-ed6fc30e8475_CV_MAZO.pdf',
+   'DATA'),
+  ('static\\uploads\\e70b7c36-cfcd-4724-b2a6-94176bda12e3_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\e70b7c36-cfcd-4724-b2a6-94176bda12e3_4.jpg',
+   'DATA'),
+  ('static\\uploads\\e835403c-d799-4bbd-80aa-41dfb317deb8_lettre_de_motivation.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\e835403c-d799-4bbd-80aa-41dfb317deb8_lettre_de_motivation.pdf',
+   'DATA'),
+  ('static\\uploads\\e8d1cb82-d427-4bf3-9a41-a85dfa211b4b_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\e8d1cb82-d427-4bf3-9a41-a85dfa211b4b_4.jpg',
+   'DATA'),
+  ('static\\uploads\\e969961a-86ae-4fe5-859c-7e4ebd582600_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\e969961a-86ae-4fe5-859c-7e4ebd582600_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\ecb8ddfa-054e-459f-9be2-2194e6612e46_payment_invoice_112261782.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\ecb8ddfa-054e-459f-9be2-2194e6612e46_payment_invoice_112261782.pdf',
+   'DATA'),
+  ('static\\uploads\\ef73c30b-9010-4880-8665-1875dec7bc6d_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\ef73c30b-9010-4880-8665-1875dec7bc6d_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\ef7cda0b-a266-467f-8ef2-67497fc3f1d4_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\ef7cda0b-a266-467f-8ef2-67497fc3f1d4_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\f10b9845-5b54-430f-a165-2732ab396474_statistiques_mariages.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\f10b9845-5b54-430f-a165-2732ab396474_statistiques_mariages.pdf',
+   'DATA'),
+  ('static\\uploads\\f11df5f2-eb2e-45b4-8eec-d9d28b15bdba_11.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\f11df5f2-eb2e-45b4-8eec-d9d28b15bdba_11.jpg',
+   'DATA'),
+  ('static\\uploads\\f3b13c30-a1b1-4842-9e4f-8925804a9957_Screenshot_20241025-152234.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\f3b13c30-a1b1-4842-9e4f-8925804a9957_Screenshot_20241025-152234.png',
+   'DATA'),
+  ('static\\uploads\\f3e2e558-dd28-4bb0-888e-72845c6f22ca_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\f3e2e558-dd28-4bb0-888e-72845c6f22ca_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\f458c88e-503a-4e4f-8959-e4c4aaca8a9a_IMG_20220330_150258_828.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\f458c88e-503a-4e4f-8959-e4c4aaca8a9a_IMG_20220330_150258_828.jpg',
+   'DATA'),
+  ('static\\uploads\\f7368340-73ad-448e-a081-df504be450c0_4.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\f7368340-73ad-448e-a081-df504be450c0_4.jpg',
+   'DATA'),
+  ('static\\uploads\\fa2439c2-81e6-4a58-ab0d-62aaba1527b5.png',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\fa2439c2-81e6-4a58-ab0d-62aaba1527b5.png',
+   'DATA'),
+  ('static\\uploads\\fbe2ef8a-f085-4a51-87a3-352b81661e4d_IMG_20220404_150325_749.jpg',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\fbe2ef8a-f085-4a51-87a3-352b81661e4d_IMG_20220404_150325_749.jpg',
+   'DATA'),
+  ('static\\uploads\\ff573e71-8fb2-49e5-8367-b73899951492_BORDEREAU_BOKULUTU.pdf',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\static\\uploads\\ff573e71-8fb2-49e5-8367-b73899951492_BORDEREAU_BOKULUTU.pdf',
+   'DATA'),
+  ('templates\\base.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\base.html',
+   'DATA'),
+  ('templates\\confirmation_connexion.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\confirmation_connexion.html',
+   'DATA'),
+  ('templates\\dashboard.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\dashboard.html',
+   'DATA'),
+  ('templates\\edit_etablissement.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\edit_etablissement.html',
+   'DATA'),
+  ('templates\\gestion_etablissement.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\gestion_etablissement.html',
+   'DATA'),
+  ('templates\\inscription.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\inscription.html',
+   'DATA'),
+  ('templates\\inscription_email.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\inscription_email.html',
+   'DATA'),
+  ('templates\\login.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\login.html',
+   'DATA'),
+  ('templates\\manage_departements.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\manage_departements.html',
+   'DATA'),
+  ('templates\\manage_etudiants.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\manage_etudiants.html',
+   'DATA'),
+  ('templates\\manage_facultes.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\manage_facultes.html',
+   'DATA'),
+  ('templates\\manage_inscriptions.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\manage_inscriptions.html',
+   'DATA'),
+  ('templates\\manage_options.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\manage_options.html',
+   'DATA'),
+  ('templates\\manage_promotions.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\manage_promotions.html',
+   'DATA'),
+  ('templates\\manage_systemes.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\manage_systemes.html',
+   'DATA'),
+  ('templates\\profil.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\profil.html',
+   'DATA'),
+  ('templates\\register.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\register.html',
+   'DATA'),
+  ('templates\\success.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\success.html',
+   'DATA'),
+  ('templates\\voir_documents.html',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\templates\\voir_documents.html',
+   'DATA'),
+  ('certifi\\py.typed',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\certifi\\py.typed',
+   'DATA'),
+  ('certifi\\cacert.pem',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\certifi\\cacert.pem',
+   'DATA'),
+  ('cryptography-45.0.5.dist-info\\licenses\\LICENSE.APACHE',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\cryptography-45.0.5.dist-info\\licenses\\LICENSE.APACHE',
+   'DATA'),
+  ('cryptography-45.0.5.dist-info\\WHEEL',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\cryptography-45.0.5.dist-info\\WHEEL',
+   'DATA'),
+  ('cryptography-45.0.5.dist-info\\RECORD',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\cryptography-45.0.5.dist-info\\RECORD',
+   'DATA'),
+  ('cryptography-45.0.5.dist-info\\licenses\\LICENSE.BSD',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\cryptography-45.0.5.dist-info\\licenses\\LICENSE.BSD',
+   'DATA'),
+  ('cryptography-45.0.5.dist-info\\INSTALLER',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\cryptography-45.0.5.dist-info\\INSTALLER',
+   'DATA'),
+  ('cryptography-45.0.5.dist-info\\METADATA',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\cryptography-45.0.5.dist-info\\METADATA',
+   'DATA'),
+  ('cryptography-45.0.5.dist-info\\licenses\\LICENSE',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\cryptography-45.0.5.dist-info\\licenses\\LICENSE',
+   'DATA'),
+  ('importlib_metadata-8.5.0.dist-info\\top_level.txt',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\importlib_metadata-8.5.0.dist-info\\top_level.txt',
+   'DATA'),
+  ('importlib_metadata-8.5.0.dist-info\\LICENSE',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\importlib_metadata-8.5.0.dist-info\\LICENSE',
+   'DATA'),
+  ('importlib_metadata-8.5.0.dist-info\\RECORD',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\importlib_metadata-8.5.0.dist-info\\RECORD',
+   'DATA'),
+  ('importlib_metadata-8.5.0.dist-info\\METADATA',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\importlib_metadata-8.5.0.dist-info\\METADATA',
+   'DATA'),
+  ('importlib_metadata-8.5.0.dist-info\\WHEEL',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\importlib_metadata-8.5.0.dist-info\\WHEEL',
+   'DATA'),
+  ('importlib_metadata-8.5.0.dist-info\\INSTALLER',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\importlib_metadata-8.5.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('webview\\js\\customize.js',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\js\\customize.js',
+   'DATA'),
+  ('webview\\lib\\pywebview-android.jar',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\lib\\pywebview-android.jar',
+   'DATA'),
+  ('webview\\js\\lib\\dom_json.js',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\js\\lib\\dom_json.js',
+   'DATA'),
+  ('webview\\js\\api.js',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\js\\api.js',
+   'DATA'),
+  ('webview\\js\\lib\\polyfill.js',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\js\\lib\\polyfill.js',
+   'DATA'),
+  ('webview\\js\\finish.js',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\webview\\js\\finish.js',
+   'DATA'),
+  ('setuptools\\_vendor\\jaraco\\text\\lorem ipsum.txt',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\jaraco\\text\\lorem '
+   'ipsum.txt',
+   'DATA'),
+  ('blinker-1.8.2.dist-info\\INSTALLER',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\blinker-1.8.2.dist-info\\INSTALLER',
+   'DATA'),
+  ('werkzeug-3.0.6.dist-info\\WHEEL',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\werkzeug-3.0.6.dist-info\\WHEEL',
+   'DATA'),
+  ('flask-3.0.3.dist-info\\LICENSE.txt',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask-3.0.3.dist-info\\LICENSE.txt',
+   'DATA'),
+  ('werkzeug-3.0.6.dist-info\\INSTALLER',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\werkzeug-3.0.6.dist-info\\INSTALLER',
+   'DATA'),
+  ('flask-3.0.3.dist-info\\RECORD',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask-3.0.3.dist-info\\RECORD',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\entry_points.txt',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\entry_points.txt',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\WHEEL',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\WHEEL',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\RECORD',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\itsdangerous-2.2.0.dist-info\\RECORD',
+   'DATA'),
+  ('flask_mail-0.10.0.dist-info\\REQUESTED',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask_mail-0.10.0.dist-info\\REQUESTED',
+   'DATA'),
+  ('blinker-1.8.2.dist-info\\METADATA',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\blinker-1.8.2.dist-info\\METADATA',
+   'DATA'),
+  ('flask_mail-0.10.0.dist-info\\INSTALLER',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask_mail-0.10.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\LICENSE.txt',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\itsdangerous-2.2.0.dist-info\\LICENSE.txt',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\RECORD',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\RECORD',
+   'DATA'),
+  ('blinker-1.8.2.dist-info\\RECORD',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\blinker-1.8.2.dist-info\\RECORD',
+   'DATA'),
+  ('flask-3.0.3.dist-info\\INSTALLER',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask-3.0.3.dist-info\\INSTALLER',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\INSTALLER',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('flask_mail-0.10.0.dist-info\\LICENSE.txt',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask_mail-0.10.0.dist-info\\LICENSE.txt',
+   'DATA'),
+  ('werkzeug-3.0.6.dist-info\\RECORD',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\werkzeug-3.0.6.dist-info\\RECORD',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\WHEEL',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\itsdangerous-2.2.0.dist-info\\WHEEL',
+   'DATA'),
+  ('flask-3.0.3.dist-info\\WHEEL',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask-3.0.3.dist-info\\WHEEL',
+   'DATA'),
+  ('blinker-1.8.2.dist-info\\WHEEL',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\blinker-1.8.2.dist-info\\WHEEL',
+   'DATA'),
+  ('werkzeug-3.0.6.dist-info\\LICENSE.txt',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\werkzeug-3.0.6.dist-info\\LICENSE.txt',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\INSTALLER',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\itsdangerous-2.2.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\METADATA',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\METADATA',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\LICENSE.txt',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\LICENSE.txt',
+   'DATA'),
+  ('flask_mail-0.10.0.dist-info\\RECORD',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask_mail-0.10.0.dist-info\\RECORD',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\METADATA',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\itsdangerous-2.2.0.dist-info\\METADATA',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.43.0.dist-info\\REQUESTED',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\wheel-0.43.0.dist-info\\REQUESTED',
+   'DATA'),
+  ('flask-3.0.3.dist-info\\METADATA',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask-3.0.3.dist-info\\METADATA',
+   'DATA'),
+  ('werkzeug-3.0.6.dist-info\\METADATA',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\werkzeug-3.0.6.dist-info\\METADATA',
+   'DATA'),
+  ('flask_mail-0.10.0.dist-info\\METADATA',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask_mail-0.10.0.dist-info\\METADATA',
+   'DATA'),
+  ('flask-3.0.3.dist-info\\entry_points.txt',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask-3.0.3.dist-info\\entry_points.txt',
+   'DATA'),
+  ('blinker-1.8.2.dist-info\\LICENSE.txt',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\blinker-1.8.2.dist-info\\LICENSE.txt',
+   'DATA'),
+  ('flask_mail-0.10.0.dist-info\\WHEEL',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\flask_mail-0.10.0.dist-info\\WHEEL',
+   'DATA'),
+  ('base_library.zip',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\build\\app_gui\\base_library.zip',
+   'DATA')],)

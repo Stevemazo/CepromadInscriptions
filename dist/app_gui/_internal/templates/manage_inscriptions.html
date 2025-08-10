@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Gestion des types d'inscription</h2>
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal">Ajouter un type</button>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <!-- Champ de recherche -->
+    <div class="mb-3">
+        <input type="text" id="recherche" class="form-control" placeholder="Rechercher un type d'inscription...">
+    </div>
+
+    <table class="table table-bordered" id="tableInscriptions">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Montant</th>
+                <th>Devise</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ins in inscriptions %}
+            <tr>
+                <td>{{ ins.nom }}</td>
+                <td>{{ ins.montant }}</td>
+                <td>{{ ins.devise }}</td>
+                <td>
+                    <button class="btn btn-sm btn-warning btn-edit" data-id="{{ ins.id }}" data-nom="{{ ins.nom }}"
+                        data-montant="{{ ins.montant }}" data-devise="{{ ins.devise }}" data-bs-toggle="modal"
+                        data-bs-target="#editModal">Modifier</button>
+                    <a href="{{ url_for('supprimer_inscription', id=ins.id) }}" class="btn btn-sm btn-danger"
+                        onclick="return confirm('Êtes-vous sûr ?')">Supprimer</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal Ajout -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="POST" action="{{ url_for('ajouter_inscription') }}">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ajouter un type d'inscription</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input name="nom" class="form-control mb-2" placeholder="Nom" required>
+                    <input name="montant" class="form-control mb-2" type="number" step="0.01" placeholder="Montant"
+                        required>
+                    <input name="devise" class="form-control" placeholder="Devise (USD, CDF...)" required>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Enregistrer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Modification -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="POST" id="editForm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modifier un type d'inscription</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" name="nom" id="edit-nom" class="form-control mb-2" required>
+                    <input type="number" name="montant" id="edit-montant" class="form-control mb-2" step="0.01"
+                        required>
+                    <input type="text" name="devise" id="edit-devise" class="form-control" required>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Mettre à jour</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.btn-edit').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const id = this.dataset.id;
+            document.getElementById('editForm').action = '/modifier_inscription/' + id;
+            document.getElementById('edit-nom').value = this.dataset.nom;
+            document.getElementById('edit-montant').value = this.dataset.montant;
+            document.getElementById('edit-devise').value = this.dataset.devise;
+        });
+    });
+
+    document.getElementById('recherche').addEventListener('input', function () {
+        const filtre = this.value.toLowerCase();
+        const lignes = document.querySelectorAll('#tableInscriptions tbody tr');
+        lignes.forEach(ligne => {
+            const texte = ligne.textContent.toLowerCase();
+            ligne.style.display = texte.includes(filtre) ? '' : 'none';
+        });
+    });
+
+</script>
+{% endblock %}

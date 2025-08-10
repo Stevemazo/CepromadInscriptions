@@ -1,0 +1,75 @@
+('C:\\Users\\STEVE '
+ 'MAZO\\Desktop\\Test\\GinscriptionsFlask\\build\\app_gui\\app_gui.pkg',
+ {'BINARY': True,
+  'DATA': True,
+  'EXECUTABLE': True,
+  'EXTENSION': True,
+  'PYMODULE': True,
+  'PYSOURCE': True,
+  'PYZ': False,
+  'SPLASH': True,
+  'SYMLINK': False},
+ [('pyi-contents-directory _internal', '', 'OPTION'),
+  ('PYZ-00.pyz',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\build\\app_gui\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\build\\app_gui\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\build\\app_gui\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\build\\app_gui\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\build\\app_gui\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'C:\\Users\\STEVE '
+   'MAZO\\Desktop\\Test\\GinscriptionsFlask\\build\\app_gui\\localpycs\\pyimod04_pywin32.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'c:\\users\\steve '
+   'mazo\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'C:\\Users\\STEVE '
+   'MAZO\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgutil',
+   'C:\\Users\\STEVE '
+   'MAZO\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgutil.py',
+   'PYSOURCE'),
+  ('pyi_rth_multiprocessing',
+   'C:\\Users\\STEVE '
+   'MAZO\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessing.py',
+   'PYSOURCE'),
+  ('pyi_rth_cryptography_openssl',
+   'C:\\Users\\STEVE '
+   'MAZO\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks\\pyi_rth_cryptography_openssl.py',
+   'PYSOURCE'),
+  ('pyi_rth_setuptools',
+   'C:\\Users\\STEVE '
+   'MAZO\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_setuptools.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgres',
+   'C:\\Users\\STEVE '
+   'MAZO\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgres.py',
+   'PYSOURCE'),
+  ('app_gui',
+   'C:\\Users\\STEVE MAZO\\Desktop\\Test\\GinscriptionsFlask\\app_gui.py',
+   'PYSOURCE')],
+ 'python38.dll',
+ True,
+ False,
+ False,
+ [],
+ None,
+ None,
+ None)

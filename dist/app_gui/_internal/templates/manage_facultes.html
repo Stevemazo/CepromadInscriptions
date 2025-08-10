@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h3 class="mb-4">Gestion des Facultés</h3>
+
+    <!-- Formulaire d'ajout -->
+    <form action="{{ url_for('add_faculte') }}" method="POST" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="nom" class="form-control" placeholder="Nom de la faculté" required>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+    </form>
+
+    <!-- Champ de recherche -->
+    <div class="mb-3">
+        <input type="text" id="recherche" class="form-control" placeholder="Rechercher une faculté...">
+    </div>
+
+    <!-- Tableau des facultés -->
+    <table class="table table-bordered table-striped" id="tableFacultes">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for faculte in facultes %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ faculte.nom }}</td>
+                <td>
+                    <button class="btn btn-sm btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#editModal{{ faculte.id }}">
+                        Modifier
+                    </button>
+                    <a href="{{ url_for('delete_faculte', id=faculte.id) }}" class="btn btn-sm btn-danger"
+                        onclick="return confirm('Voulez-vous vraiment supprimer cette faculté ?');">
+                        Supprimer
+                    </a>
+                </td>
+            </tr>
+
+            <!-- Modal de modification -->
+            <div class="modal fade" id="editModal{{ faculte.id }}" tabindex="-1"
+                aria-labelledby="editModalLabel{{ faculte.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form action="{{ url_for('update_faculte', id=faculte.id) }}" method="POST">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modifier la faculté</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" name="nom" class="form-control" value="{{ faculte.nom }}" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Script de recherche dynamique -->
+<script>
+    document.getElementById('recherche').addEventListener('input', function () {
+        const filtre = this.value.toLowerCase();
+        const lignes = document.querySelectorAll('#tableFacultes tbody tr');
+        lignes.forEach(ligne => {
+            const texte = ligne.textContent.toLowerCase();
+            ligne.style.display = texte.includes(filtre) ? '' : 'none';
+        });
+    });
+
+</script>
+{% endblock %}
