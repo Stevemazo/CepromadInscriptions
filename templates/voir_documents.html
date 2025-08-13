@@ -5,11 +5,10 @@
 
     <div class="row">
         {% for label, doc in {
-        "Bulletin 1": etudiant.bulletin1,
-        "Bulletin 2": etudiant.bulletin2,
+        "Bulletin 5<sup>ème</sup> Année": etudiant.bulletin1,
+        "Bulletin 6<sup>ème</sup> Année": etudiant.bulletin2,
         "Attestation de réussite": etudiant.attestation_reussite,
-        "Attestation de bonne conduite": etudiant.attestation_moeurs,
-        "Certificat de naissance": etudiant.certificat_naissance
+        "Attestation de bonne conduite": etudiant.attestation_moeurs
         }.items() %}
         <div class="col-md-6 mb-4">
             <h6>{{ label }}</h6>

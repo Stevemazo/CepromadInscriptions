@@ -393,8 +393,8 @@ def inscription_etudiant():
         conn = connect_db()
         cur = conn.cursor(dictionary=True)
         cur.execute("""SELECT id FROM etudiants WHERE nom=%s AND postnom=%s AND prenom=%s AND email=%s 
-        AND systeme_id=%s AND promotion_id=%s AND inscription_id=%s
-        """, (nom, postnom, prenom, email, systeme_id, promotion_id, inscription_id))
+        AND systeme_id=%s AND promotion_id=%s AND inscription_id=%s AND statut_paiement='PAYÉ'
+        """, (nom, postnom, prenom, email, systeme_id, promotion_id, inscription_id, statut_paiement))
 
         doublon = cur.fetchone()
 
@@ -441,15 +441,15 @@ def inscription_etudiant():
                 nom, postnom, prenom, email, date_naissance, sexe, etat_civil, nom_conjoint,
                 adresse, telephone, photo, nom_tuteur, adresse_tuteur, telephone_tuteur,
                 allergies, systeme_id, promotion_id,
-                bulletin1, bulletin2, attestation_reussite, attestation_moeurs, certificat_naissance,
+                bulletin1, bulletin2, attestation_reussite, attestation_moeurs,
                 inscription_id, montant_inscription, devise, transaction_id, statut_paiement
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
                       %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (
             nom, postnom, prenom, email, date_naissance, sexe, etat_civil, nom_conjoint,
             adresse, telephone, photo_filename, nom_tuteur, adresse_tuteur, telephone_tuteur,
             allergies, systeme_id, promotion_id,
-            bulletin1, bulletin2, attestation_reussite, attestation_moeurs, certificat_naissance,
+            bulletin1, bulletin2, attestation_reussite, attestation_moeurs,
             inscription_id, montant_inscription, devise, transaction_id, statut_paiement
         ))
         conn.commit()

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 05 août 2025 à 11:21
+-- Généré le : lun. 11 août 2025 à 17:06
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -92,8 +92,9 @@ INSERT INTO `etablissement` (`id`, `nom_etablissement`, `lieu`, `adresse`, `comm
 CREATE TABLE `etudiants` (
   `id` int(11) NOT NULL,
   `nom` varchar(100) DEFAULT NULL,
+  `postnom` text NOT NULL,
   `prenom` varchar(100) DEFAULT NULL,
-  `email` varchar(150) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `date_naissance` date DEFAULT NULL,
   `sexe` enum('Masculin','Féminin') DEFAULT NULL,
   `etat_civil` enum('Célibataire','Marié(e)','Divorcé(e)','Veuf(ve)') DEFAULT NULL,
@@ -114,7 +115,6 @@ CREATE TABLE `etudiants` (
   `bulletin2` varchar(255) DEFAULT NULL,
   `attestation_reussite` varchar(255) DEFAULT NULL,
   `attestation_moeurs` varchar(255) DEFAULT NULL,
-  `certificat_naissance` varchar(255) DEFAULT NULL,
   `inscription_id` int(11) DEFAULT NULL,
   `montant_inscription` int(11) DEFAULT NULL,
   `devise` varchar(10) DEFAULT NULL,
@@ -152,6 +152,13 @@ CREATE TABLE `inscriptions_etudiants` (
   `email` varchar(150) NOT NULL,
   `date_creation` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Déchargement des données de la table `inscriptions_etudiants`
+--
+
+INSERT INTO `inscriptions_etudiants` (`id`, `email`, `date_creation`) VALUES
+(1, 'mazosteve@gmail.com', '2025-08-10 20:08:03');
 
 -- --------------------------------------------------------
 
@@ -192,9 +199,9 @@ CREATE TABLE `promotions` (
 --
 
 INSERT INTO `promotions` (`id`, `nom`, `option_id`, `systeme_id`) VALUES
-(1, 'Economie', 3, 2),
 (2, 'Management', 3, 1),
-(3, 'Génie Logiciel', 4, 2);
+(3, 'Génie Logiciel', 4, 2),
+(5, 'steve mazo', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -212,8 +219,9 @@ CREATE TABLE `systemes` (
 --
 
 INSERT INTO `systemes` (`id`, `nom`) VALUES
-(1, 'LMDs'),
-(2, 'Classique');
+(1, 'LMD'),
+(2, 'Classique'),
+(5, 'xxxx');
 
 -- --------------------------------------------------------
 
@@ -255,7 +263,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nom`, `email`, `password`, `role`) VALUES
-(1, 'steve mazo', 'mazosteve@gmail.com', 'scrypt:32768:8:1$eqFmTimcAcDfrl11$25c48fb0d610d5e659079a94b68167367f17dec3fed61c869bd40066e27183471f1eb1c9c870e8b24f23a8d59ba3f0721a949044641cbdafdaa9f289f8298dda', 'admin');
+(1, 'steve mazo', 'mazosteve@gmail.com', 'scrypt:32768:8:1$ef9pOYxZbs5QvG7j$cf15f5e2917c9183902789cd79f0b0594f38f379b293a053c67519eb3aa2a45fd54bcbe0f1338ca9100bf486fc51955860514d062ed4c9f525fd429cd5bfd469', 'admin'),
+(6, 'Mbamvua Daniel', 'mazocorporation456@gmail.com', 'scrypt:32768:8:1$nJhovzGqskNP7qV8$46c118f3075cf912b6b1770fdc0410b60349af6b6a1bbddd87fc5f841d4988ebe36226f05d3361436ab31755db668b9386c5750f6531d16f1899daa6a52bab06', 'prof');
 
 --
 -- Index pour les tables déchargées
@@ -285,7 +294,6 @@ ALTER TABLE `etablissement`
 --
 ALTER TABLE `etudiants`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `unique_matricule` (`numero_matricule`),
   ADD KEY `systeme_id` (`systeme_id`),
   ADD KEY `promotion_id` (`promotion_id`),
@@ -352,13 +360,13 @@ ALTER TABLE `configuration`
 -- AUTO_INCREMENT pour la table `departements`
 --
 ALTER TABLE `departements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `etablissement`
 --
 ALTER TABLE `etablissement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `etudiants`
@@ -370,43 +378,43 @@ ALTER TABLE `etudiants`
 -- AUTO_INCREMENT pour la table `facultes`
 --
 ALTER TABLE `facultes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `inscriptions_etudiants`
 --
 ALTER TABLE `inscriptions_etudiants`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `options`
 --
 ALTER TABLE `options`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `promotions`
 --
 ALTER TABLE `promotions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `systemes`
 --
 ALTER TABLE `systemes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `type_inscriptions`
 --
 ALTER TABLE `type_inscriptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Contraintes pour les tables déchargées
