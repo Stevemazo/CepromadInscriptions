@@ -393,8 +393,8 @@ def inscription_etudiant():
         conn = connect_db()
         cur = conn.cursor(dictionary=True)
         cur.execute("""SELECT id FROM etudiants WHERE nom=%s AND postnom=%s AND prenom=%s AND email=%s 
-        AND systeme_id=%s AND promotion_id=%s AND inscription_id=%s AND statut_paiement='PAYÉ'
-        """, (nom, postnom, prenom, email, systeme_id, promotion_id, inscription_id, statut_paiement))
+        AND systeme_id=%s AND promotion_id=%s AND inscription_id=%s AND statut_paiement=%s
+        """, (nom, postnom, prenom, email, systeme_id, promotion_id, inscription_id, 'PAYÉ'))
 
         doublon = cur.fetchone()
 
