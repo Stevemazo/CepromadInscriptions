@@ -365,9 +365,8 @@ def confirmation_connexion():
 
 @app.route('/inscription_finale', methods=['GET', 'POST'])
 def inscription_etudiant():
-
     if request.method == 'POST':
-        # Données personnelles
+        # === Données personnelles ===
         nom = request.form['nom']
         postnom = request.form['postnom']
         prenom = request.form['prenom']
@@ -392,19 +391,21 @@ def inscription_etudiant():
 
         conn = connect_db()
         cur = conn.cursor(dictionary=True)
-        cur.execute("""SELECT id FROM etudiants WHERE nom=%s AND postnom=%s AND prenom=%s AND email=%s 
-        AND systeme_id=%s AND promotion_id=%s AND inscription_id=%s AND statut_paiement=%s
-        """, (nom, postnom, prenom, email, systeme_id, promotion_id, inscription_id, 'PAYÉ'))
 
+        # === Vérification des doublons (uniquement ceux déjà payés) ===
+        cur.execute("""
+            SELECT id FROM etudiants 
+            WHERE nom=%s AND postnom=%s AND prenom=%s AND email=%s
+              AND systeme_id=%s AND promotion_id=%s AND inscription_id=%s
+              AND statut_paiement='PAYÉ'
+        """, (nom, postnom, prenom, email, systeme_id, promotion_id, inscription_id))
         doublon = cur.fetchone()
-
         if doublon:
             conn.close()
-
-            flash("Cette inscription existe déjà dans le système.", "danger")
+            flash("Cette inscription a déjà été effectuée et payée.", "danger")
             return redirect(url_for('inscription_etudiant'))
 
-        # Traitement de l’image
+        # === Traitement de l’image ===
         photo_data = request.form.get('photo_data')
         photo_file = request.files.get('photo')
         photo_filename = None
@@ -416,7 +417,7 @@ def inscription_etudiant():
             photo_filename = secure_filename(photo_file.filename)
             photo_file.save(f'static/uploads/{photo_filename}')
 
-        # Gestion des pièces jointes
+        # === Gestion des pièces jointes ===
         def save_file(field_name):
             f = request.files.get(field_name)
             if f and f.filename:
@@ -432,10 +433,7 @@ def inscription_etudiant():
         attestation_moeurs = save_file('attestation_moeurs')
         certificat_naissance = save_file('certificat_naissance')
 
-
-        # Insertion en attente dans la base de données
-        conn = connect_db()
-        cur = conn.cursor(dictionary=True)
+        # === Insertion en base de données (statut EN_ATTENTE) ===
         cur.execute("""
             INSERT INTO etudiants (
                 nom, postnom, prenom, email, date_naissance, sexe, etat_civil, nom_conjoint,
@@ -455,7 +453,7 @@ def inscription_etudiant():
         conn.commit()
         conn.close()
 
-        # Redirection vers CinetPay
+        # === Redirection vers CinetPay avec webhook pour mise à jour automatique ===
         data = {
             "amount": montant_inscription,
             "currency": devise,
@@ -467,14 +465,11 @@ def inscription_etudiant():
             "customer_surname": prenom,
             "customer_email": email,
             "customer_phone_number": telephone,
-            "notify_url": request.url_root + 'notification',
+            "notify_url": request.url_root + 'notification',  # webhook pour statut automatique
             "return_url": request.url_root + 'success?transaction_id=' + transaction_id
         }
 
-        headers = {
-            'Content-Type': 'application/json'
-        }
-
+        headers = {'Content-Type': 'application/json'}
         response = requests.post(CINETPAY_URL, json=data, headers=headers)
         result = response.json()
 
@@ -483,9 +478,8 @@ def inscription_etudiant():
         else:
             return f"Erreur lors de l'initialisation du paiement: {result}"
 
+    # === GET ===
     email_connecte = session.get('email_connecte')
-
-    # GET
     conn = connect_db()
     cur = conn.cursor(dictionary=True)
     cur.execute("SELECT * FROM systemes")
@@ -501,9 +495,16 @@ def inscription_etudiant():
 @app.route('/notification', methods=['POST'])
 def notification():
     data = request.json
-    transaction_id = data.get('transaction_id')
+    if not data:
+        app.logger.error("Notification reçue sans JSON")
+        return "Bad Request", 400
 
-    if transaction_id:
+    transaction_id = data.get('transaction_id')
+    if not transaction_id:
+        app.logger.error("Notification reçue sans transaction_id")
+        return "Bad Request", 400
+
+    try:
         # Vérifie le paiement via CinetPay
         verify_url = 'https://api-checkout.cinetpay.com/v2/payment/check'
         payload = {
@@ -511,25 +512,22 @@ def notification():
             "site_id": SITE_ID,
             "transaction_id": transaction_id
         }
+        headers = {'Content-Type': 'application/json'}
+        response = requests.post(verify_url, json=payload, headers=headers)
+        result = response.json()
 
-        headers = {
-            'Content-Type': 'application/json'
-        }
-
-        try:
-            response = requests.post(verify_url, json=payload, headers=headers)
-            result = response.json()
-
-            # Vérifie si le paiement est bien accepté
-            statut_paiement = result.get("data", {}).get("status")
-            if statut_paiement == 'ACCEPTED':
-                conn = connect_db()
-                cur = conn.cursor(dictionary=True)
-                cur.execute("UPDATE etudiants SET statut_paiement='PAYÉ' WHERE transaction_id=%s", (transaction_id,))
-                conn.commit()
-                conn.close()
-        except Exception as e:
-            print("Erreur lors de la vérification du paiement :", e)
+        statut_paiement = result.get("data", {}).get("status")
+        if statut_paiement == 'ACCEPTED':
+            conn = connect_db()
+            cur = conn.cursor(dictionary=True)
+            cur.execute("UPDATE etudiants SET statut_paiement='PAYÉ' WHERE transaction_id=%s", (transaction_id,))
+            conn.commit()
+            conn.close()
+            app.logger.info(f"Paiement validé pour transaction {transaction_id}")
+        else:
+            app.logger.warning(f"Paiement non accepté pour transaction {transaction_id}: {statut_paiement}")
+    except Exception as e:
+        app.logger.error(f"Erreur lors de la vérification du paiement: {e}")
 
     return "OK", 200
 
