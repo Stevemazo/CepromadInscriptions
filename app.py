@@ -26,6 +26,7 @@ from flask import session
 
 from io import BytesIO
 
+from threading import Thread
 
 app = Flask(__name__)
 
@@ -87,6 +88,31 @@ def envoyer_email(destinataire, code):
             serveur.sendmail("universiteducepromad01@gmail.com", destinataire, texte)
     except Exception as e:
         print("Erreur lors de l'envoi de l'e-mail :", e)
+
+
+def verify_payment(transaction_id):
+    try:
+        verify_url = 'https://api-checkout.cinetpay.com/v2/payment/check'
+        payload = {"apikey": API_KEY, "site_id": SITE_ID, "transaction_id": transaction_id}
+        headers = {'Content-Type': 'application/json'}
+        response = requests.post(verify_url, json=payload, headers=headers, timeout=5)
+        result = response.json()
+        statut_paiement = result.get("data", {}).get("status")
+        if statut_paiement == 'ACCEPTED':
+            conn = connect_db()
+            cur = conn.cursor(dictionary=True)
+            cur.execute(
+                "UPDATE etudiants SET statut_paiement='PAYÉ' WHERE transaction_id=%s",
+                (transaction_id,)
+            )
+            conn.commit()
+            conn.close()
+            app.logger.info(f"Paiement validé pour transaction {transaction_id}")
+        else:
+            app.logger.warning(f"Paiement non accepté pour transaction {transaction_id}: {statut_paiement}")
+    except Exception as e:
+        app.logger.error(f"Erreur lors de la vérification du paiement: {e}")
+
 
 
 @app.context_processor
@@ -495,40 +521,15 @@ def inscription_etudiant():
 @app.route('/notification', methods=['POST'])
 def notification():
     data = request.json
-    if not data:
-        app.logger.error("Notification reçue sans JSON")
+    if not data or not data.get('transaction_id'):
+        app.logger.error("Notification reçue sans transaction_id ou sans JSON")
         return "Bad Request", 400
 
-    transaction_id = data.get('transaction_id')
-    if not transaction_id:
-        app.logger.error("Notification reçue sans transaction_id")
-        return "Bad Request", 400
+    transaction_id = data['transaction_id']
+    # Lancer la vérification dans un thread séparé pour répondre rapidement à CinetPay
+    Thread(target=verify_payment, args=(transaction_id,)).start()
 
-    try:
-        # Vérifie le paiement via CinetPay
-        verify_url = 'https://api-checkout.cinetpay.com/v2/payment/check'
-        payload = {
-            "apikey": API_KEY,
-            "site_id": SITE_ID,
-            "transaction_id": transaction_id
-        }
-        headers = {'Content-Type': 'application/json'}
-        response = requests.post(verify_url, json=payload, headers=headers)
-        result = response.json()
-
-        statut_paiement = result.get("data", {}).get("status")
-        if statut_paiement == 'ACCEPTED':
-            conn = connect_db()
-            cur = conn.cursor(dictionary=True)
-            cur.execute("UPDATE etudiants SET statut_paiement='PAYÉ' WHERE transaction_id=%s", (transaction_id,))
-            conn.commit()
-            conn.close()
-            app.logger.info(f"Paiement validé pour transaction {transaction_id}")
-        else:
-            app.logger.warning(f"Paiement non accepté pour transaction {transaction_id}: {statut_paiement}")
-    except Exception as e:
-        app.logger.error(f"Erreur lors de la vérification du paiement: {e}")
-
+    # Réponse immédiate pour que CinetPay considère la notification comme reçue
     return "OK", 200
 
 
